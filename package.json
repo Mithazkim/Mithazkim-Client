@@ -4,10 +4,15 @@
   "private": true,
   "main": "index.tsx",
   "dependencies": {
+    "axios": "^0.19.0",
+    "formik": "^2.0.3",
+    "loaders.css": "^0.1.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-loaders": "^3.0.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "yup": "^0.27.0"
   },
   "scripts": {
     "lint": "eslint --ext js,ts,tsx src",
@@ -38,6 +43,7 @@
     "@storybook/addon-links": "^5.2.5",
     "@storybook/addons": "^5.2.5",
     "@storybook/react": "^5.2.5",
+    "@types/axios": "^0.14.0",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "24.0.20",
@@ -47,6 +53,7 @@
     "@types/react-router-dom": "^5.1.0",
     "@types/react-test-renderer": "^16.9.1",
     "@types/storybook__react": "^4.0.2",
+    "@types/yup": "^0.26.24",
     "babel-loader": "^8.0.6",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",

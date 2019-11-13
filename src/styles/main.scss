@@ -1,0 +1,9 @@
+@import 'loaders.css/src/animations/ball-pulse.scss';
+@import 'common';
+
+.loader-hidden {
+  display: none;
+}
+.loader-active {
+  display: block;
+}
