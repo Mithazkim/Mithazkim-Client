@@ -40,3 +40,7 @@ jobs:
       - run:
           name: 'Run Tests'
           command: yarn test
+
+      - run:
+          name: 'Deploy to netlify'
+          command: yarn deploy
