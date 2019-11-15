@@ -12,4 +12,4 @@ And then run:
 
 `yarn install` to install the dependencies
 
-`yarn dev` to start the development server
+`yarn start` to start
