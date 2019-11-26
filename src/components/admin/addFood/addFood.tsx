@@ -8,6 +8,7 @@ import ButtonWithLoader from 'components/common/buttonWithLoader';
 import FormikSelect from 'components/common/formikSelect';
 import * as yup from 'yup';
 import { toast } from 'react-toastify';
+import styles from './addFood.module.scss';
 
 interface AddFoodFrom {
   name: string;
@@ -74,7 +75,11 @@ const AddFood: React.FC<AddFoodProps> = props => {
               options={berakhot ? berakhot.map(berakhah => ({ label: berakhah.shortName, value: berakhah._id })) : []}
             ></FormikSelect>
 
-            <ButtonWithLoader isLoading={isSubmitting} type='submit' className={'btn btn-block btn-primary mt-4 '}>
+            <ButtonWithLoader
+              isLoading={isSubmitting}
+              type='submit'
+              className={'btn btn-block btn-primary mt-4 ' + styles.addFoodBtn}
+            >
               {Dictionary.admin.AddFood.add_btn}
             </ButtonWithLoader>
           </Form>
