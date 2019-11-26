@@ -1,6 +1,10 @@
 @import 'loaders.css/src/animations/ball-pulse.scss';
 @import 'common';
 
+body {
+  direction: rtl;
+}
+
 .loader-hidden {
   display: none;
 }
