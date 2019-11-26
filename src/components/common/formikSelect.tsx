@@ -12,7 +12,7 @@ const FormikSelect: React.FC<ISelectProps> = ({ options, label, ...props }) => {
     <div className='form-group'>
       <label htmlFor={props.id}>{label}</label>
       <select {...field} {...props} className='form-control'>
-        <option key='' value='' selected disabled hidden>
+        <option key='' value='' disabled hidden>
           {Dictionary.common.formikSelect.select + ' ' + label}
         </option>
         {options.map(option => (

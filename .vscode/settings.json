@@ -6,5 +6,5 @@
     { "language": "typescriptreact", "autoFix": true }
   ],
   "eslint.alwaysShowStatus": true,
-  "cSpell.words": ["Formik"]
+  "cSpell.words": ["Formik", "berakhah", "toastify"]
 }
