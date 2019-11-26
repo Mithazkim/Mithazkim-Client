@@ -64,7 +64,6 @@ const refreshAuthLogic = (failedRequest: any) =>
     .catch(() => {
       JwtService.removeTokens();
       history.push('/');
-      // TODO logout
     });
 
 // Instantiate the interceptor (you can chain it as it returns the axios instance)

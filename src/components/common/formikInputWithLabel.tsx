@@ -6,13 +6,13 @@ interface IInputProps extends FieldAttributes<any> {
   label: string;
 }
 
-const FormikInputWithLabel: React.FC<IInputProps> = ({ label, ...props }) => {
+const FormikInputWithLabel = React.forwardRef(({ label, ...props }: IInputProps, ref?: React.Ref<HTMLInputElement>) => {
   return (
     <div className='form-group'>
       <label htmlFor={props.name}>{label}</label>
-      <FormikInput {...props}></FormikInput>
+      <FormikInput ref={ref} {...props}></FormikInput>
     </div>
   );
-};
+});
 
 export default React.memo(FormikInputWithLabel);

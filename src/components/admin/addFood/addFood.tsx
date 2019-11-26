@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Dictionary from 'dictionary/dictionary';
 import { RouteComponentProps } from 'react-router-dom';
 import ApiService from 'services/apiService';
@@ -20,6 +20,10 @@ const AddFood: React.FC<AddFoodProps> = props => {
   const [berakhot, setBerakhot] = useState<any[]>();
   const [error, setError] = useState('');
 
+  const inputName = useRef<HTMLInputElement>(null);
+
+  const initialValues: AddFoodFrom = { name: '', berakhahId: '' };
+
   const addFoodSchema = yup.object({
     name: yup.string().required(Dictionary.admin.AddFood.food_name_missing),
     berakhahId: yup.string().required(Dictionary.admin.AddFood.select_berakhah_missing)
@@ -31,13 +35,18 @@ const AddFood: React.FC<AddFoodProps> = props => {
     });
   }, []);
 
-  const initialValues: AddFoodFrom = { name: '', berakhahId: '' };
-
   const handleSubmit = (values: AddFoodFrom, formikActions: FormikHelpers<AddFoodFrom>) => {
+    setError('');
+
     ApiService.addFood(values)
       .then(() => {
         toast.success('ברכה נוספה בהצלחה');
+
         formikActions.resetForm();
+
+        if (inputName && inputName.current) {
+          inputName.current.focus();
+        }
       })
       .catch(error => {
         setError(error.response.data.msg);
@@ -54,7 +63,9 @@ const AddFood: React.FC<AddFoodProps> = props => {
             <FormikInputWithLabel
               label={Dictionary.admin.AddFood.food_name}
               name='name'
+              autoComplete='off'
               autoFocus
+              ref={inputName}
             ></FormikInputWithLabel>
 
             <FormikSelect
